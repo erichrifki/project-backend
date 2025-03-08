@@ -4,6 +4,7 @@ import cors from "cors";
 import { AppDataSource } from "./database";
 import passport from "./config/passport";
 import authRoutes from "./routes/authRoutes";
+import googleAuthRouters from "./routes/googleAuthRoutes";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -17,6 +18,7 @@ app.use(passport.initialize());
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/auth", googleAuthRouters);
 
 
 // Database connection and server start
